@@ -17,15 +17,15 @@ class Solution:
         cur=slow
         while cur:
             nxt=cur.next
-            cur.nxt=prev
+            cur.next=prev
             prev=cur
             cur=nxt
-        sec=prev
         first=head
+        sec=prev
         #check the values
         while sec:
             if sec.val!=first.val:
                 return False
-            sec=sec.next
             first=first.next
+            sec=sec.next
         return True
