@@ -1,6 +1,5 @@
 class Solution:
-    def circularSubarraySum(self, arr):
-        # code here
+    def maxCircularSum(self, arr):
         totalsum=arr[0]
         minsum=arr[0]
         maxsum=arr[0]
