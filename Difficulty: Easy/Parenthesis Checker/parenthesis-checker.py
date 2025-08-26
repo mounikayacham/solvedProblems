@@ -2,11 +2,16 @@
 class Solution:
     def isBalanced(self, s):
         # code here
-        mapping={')':'(','}':'{',']':'['}
+        m={')':'(','}':'{',']':'['}
         stack=[]
         for char in s:
-            if char in mapping.values():
+            if char in m.values():
                 stack.append(char)
-            elif not stack or mapping[char]!=stack.pop():
-                return False
-        return  not stack
+            elif char in m:
+                if not stack or stack[-1]!=m[char]:
+                    return False
+                stack.pop()
+            else:
+                pass
+        return not stack
+        
